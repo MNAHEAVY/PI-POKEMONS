@@ -7,7 +7,7 @@ export default function Card({image, name, types,id}){
     
 
     return(
-        <div >
+        <div className='cards-container' >
             <div >
                <img  src= {image} width= '300px' height ='380px'alt=""/> 
             </div>

@@ -1,0 +1,109 @@
+:root{
+    --color-primary: #fff;
+    --color-secundary: red;
+    --color-gray-dark: #737373;
+    --color-gray-medium: #545454;
+    --color-gray-light: #cccdcd;
+    --font-primary: 'Montserrat', sans-serif;
+  }
+  
+  body{
+    font-family: var(--font-primary);
+  }
+  
+  
+  .poke-container{
+    display: flex;
+    flex-direction: row-reverse;
+    margin: 0px;
+    padding: 0px;
+    width: 100%;
+    align-items: flex-end;
+    flex-wrap: wrap;
+  }
+   
+  .poke-nav{
+    background:linear-gradient(to bottom, red, white);
+    background-position: bottom;
+    width: 100%;
+    height: 350px;
+  }
+  
+  .poke-navbar-up{
+    color: var(--color-primary);
+    display: flex;
+    justify-content: flex-end;
+    height: 60%;
+    width: 100%;
+    flex-direction: row-reverse;
+    flex-wrap: wrap;
+    align-content: stretch;
+    align-items: stretch;
+    font-size: 4.5em;
+  }
+ 
+  .poke-navbar-up a button{
+    background-color: var(--color-primary);
+    padding: 0;
+    height: 40px;
+    width: 200px;
+    margin-left: 10px;
+    border-radius: 50px;
+    border: none;
+    transition: .3s;
+  }
+  .poke-navbar-up a button:hover{
+    font-size:14px;
+    height: 42px;
+    width: 202px;
+    margin-left: 10px;
+    
+  }
+  .poke-navbar-up a button h1{
+    font-size: 1.35em;
+  }
+  .pag-container{
+    display: flex;
+    align-items: flex-start;
+    flex-direction: row-reverse;
+    margin-left: -40px;
+    padding: 20px;
+    width: 100%;
+    height: 0px;
+} .pag-container h1{
+
+  display: flex;
+  font-size: 2em;
+  margin-block-start: px;
+  margin-block-end: -0.5em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  font-weight: bold;
+  align-items: center;
+  flex-wrap: wrap;
+  flex-direction: column-reverse;
+}
+.pag-container h4{
+
+  display: flex;
+  font-size: 1em;
+  margin-block-start: px;
+  margin-block-end: -0.5em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  font-weight: bold;
+  align-items: center;
+  flex-wrap: wrap;
+  flex-direction: column-reverse;
+}
+.pag-container img{
+
+  display: flex;
+
+  margin-block-start: -100px;
+  margin-block-end: -0.5em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  flex-wrap: wrap;
+  flex-direction: column-reverse;
+}
