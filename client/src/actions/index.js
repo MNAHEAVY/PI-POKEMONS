@@ -43,6 +43,12 @@ export function getPkmnByName(name){
         })
     }
 }
+export function filterCreated(payload) {
+    return {
+        type: 'FILTER_CREATED',
+        payload
+    }
+}
 
 export function filterByTypes(payload){
          return{
@@ -50,12 +56,7 @@ export function filterByTypes(payload){
              payload
          }
 }
-export function orderPkmns(payload){
-         return{        
-             type: 'ORDER_PKMNS',
-             payload
-         }
-}
+
 export function orderPkmnsAlpha(payload){
          return{        
              type: 'ORDER_PKMNS_ALPHA',

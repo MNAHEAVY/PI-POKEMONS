@@ -7,6 +7,7 @@ import './Styles/Create.css'
 export default function CreatePkmn(){
     const dispatch = useDispatch()
     const types = useSelector(store => store.types)
+    const [error,setError] = useState({})
     const[input, setInput] = useState({
         name:'',
         image:'',
@@ -23,12 +24,28 @@ export default function CreatePkmn(){
     dispatch(getAllTypes())
     },[dispatch])
     
-    function handleChange(e){
-        
-        setInput({
-            ...input,
-            [e.target.name] : e.target.value
-        })}
+
+    function validate(input){
+        let error = {}
+        if(input.name.length <= 0 && !input.name.match(/^[a-zA-Z_]+( [a-zA-Z_]+)*$/)){
+            error.name = 'Solo letras y sin espacios al final!                                                                                                                                                                                           '
+        }else error.name = null
+        if(input.image.length <= 0 && !input.image.match(/^(ftp|http|https):\/\/[^ "]+$/)){
+            error.image = 'Coloca la URL de la imagen'
+        }else error.image = null
+        return error}
+    
+    
+        function handleChange(e){
+            setInput({
+                ...input,
+                [e.target.name] : e.target.value
+            })
+            setError(validate({
+                ...input,
+                [e.target.name] : e.target.value
+            }))
+        } 
 
     function handleSelect(e){
       
@@ -39,6 +56,7 @@ export default function CreatePkmn(){
         
     function handleSubmit(e){
         e.preventDefault();
+        if(error.name === null && error.image === null){
         dispatch(createPkmn(input))
         alert('Se ha creado tu Pokemon')
         setInput({
@@ -50,11 +68,16 @@ export default function CreatePkmn(){
             velocity: 0,
             height: 0,
             weight: 0,
+            create: true,
             type: [],
 
         })
+    }else{
+        alert('Arregla los errores marcados y completa los espacios requeridos')
+    }
+    }
        
-        }
+    
     
     
     
@@ -71,17 +94,29 @@ export default function CreatePkmn(){
 
             <form onSubmit={(e)=>{handleSubmit(e)}}>
             <div id='form-cont-left'>
+                
 
                 <div id='input-name' className='form-inputs'>
                      <label>Nombre  </label>
-                     <input onChange={(e)=>{handleChange(e)}} type= 'text' 
-                      value= {input.name} name= 'name'/>   
+                     <input 
+                      type= 'text' 
+                      value= {input.name} name= 'name' 
+                      onChange={(e)=>{handleChange(e)}}/>
+                       {error.name&& (
+                            <p>{error.name}</p>
+                        )}
+                      
                 </div>
 
                 <div id='input-name' className='form-inputs'>
                      <label>Imagen  </label>
-                     <input onChange={(e)=>{handleChange(e)}} type= 'text'  
-                     value= {input.image} name= 'image'/>
+                     <input 
+                     type= 'text'  
+                     value= {input.image} name= 'image'
+                     onChange={(e)=>{handleChange(e)}}/>
+                      {error.image&& (
+                            <p>{error.image}</p>
+                        )}
                 </div>
 
                 <div id='input-name' className='form-inputs'>
@@ -125,6 +160,12 @@ export default function CreatePkmn(){
                 </div>
                 
                 <div id='select-ts' className='form-inputs'>
+                     <label>Guardar </label>
+                     <select onChange={(e)=>{handleSelect(e)}}>
+                    <option value="true"> si</option>
+                    <option value="false"> no</option>
+                    </select>
+                   
                      <label>Tipos </label>
                      <select onChange={(e)=>{handleSelect(e)}}>
                      {

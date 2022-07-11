@@ -33,6 +33,21 @@ export default function rootReducer(state = initialState, action) {
                 ...state,
                 pokemon: action.payload,
             } 
+
+         case 'FILTER_CREATED':
+                let allPokemons;
+                if(action.payload === 'all'){
+                allPokemons = [...state.pokemons]
+            }else if(action.payload === 'created'){
+                allPokemons= state.pokemons.filter(e => e.create) 
+                
+            }else if(action.payload === 'api'){
+                allPokemons= state.pokemons.filter(e => !e.create) 
+                
+            }return {
+                    ...state,
+                    pkmns: allPokemons
+                }
             
             
         case 'FILTER_BY_TYPES':

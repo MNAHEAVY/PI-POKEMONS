@@ -12,10 +12,11 @@ module.exports = (sequelize) => {
     },
     image: {
       type: DataTypes.STRING,
-      
+      allowNull: false,
     },
     name: {
       type: DataTypes.STRING,
+      allowNull: false,
     
     },
     life: {
@@ -42,6 +43,11 @@ module.exports = (sequelize) => {
       type: DataTypes.INTEGER,
       
     },
+    create: { 
+      type: DataTypes.BOOLEAN,
+      allowNull: false,
+      defaultValue: true
+    }
   
   });
 };

@@ -1,5 +1,5 @@
 import { useEffect, useState} from "react"
-import {getAllPokemons, getAllTypes, orderPkmns,filterByTypes,orderPkmnsAlpha,orderPkmnsStr} from "../actions"
+import {getAllPokemons, getAllTypes, filterCreated,filterByTypes,orderPkmnsAlpha,orderPkmnsStr} from "../actions"
 import {useDispatch,useSelector} from "react-redux"
 import {Link} from 'react-router-dom'
 import Pagination from "./Pagination"
@@ -35,8 +35,8 @@ function filterType(e){
     }
     
 function handleChangeResults(e){
-        e.preventDefault();        
-        dispatch(orderPkmns(e.target.value))
+        e.preventDefault();
+        dispatch(filterCreated(e.target.value))
     }
 
 function handleChangeAlpha(e){
@@ -74,9 +74,9 @@ function handleChangeStr(e){
             <div>
               <label>Pokemones</label>
                     <select onChange={(e)=>handleChangeResults(e)}>
-                       <option value="TODOS">Todos</option>,
-                       <option value="API">API</option>,
-                       <option value="CREADOS">CREADOS</option>,
+                       <option value="all">Todos</option>,
+                       <option value="api">API</option>,
+                       <option value="created">CREADOS</option>,
                     </select>
             </div>
 

@@ -51,9 +51,9 @@ router.get('/pokemons/:id', async(req, res, next) => {
 
 
 router.post('/',async(req, res, next)=>{
-    const {image,name,life,strength,defense,velocity,height,weight,type} = req.body
+    const {image,name,life,strength,defense,velocity,height,weight,create,type} = req.body
     try {
-        await Pokemon.create({image,name,life, strength, defense, velocity, height, weight})
+        await Pokemon.create({image,name,life, strength, defense, velocity, height, weight,create})
         if(type && type.length && typeof type === "object") {
             const newPkmn= await Pokemon.findOne({where:{name}});
             type.forEach(async t=>{

@@ -39,15 +39,12 @@
 }
 
 
-#form-create p{
-    color: #cc0000;
-}
 
 #form-cont-left{
-    height: 95%;
-    width: 36%;
+    height: 100%;
+    width: 60%;
     margin-top: 3%;
-    margin-left: 23%;
+    margin-left: 0%;
     padding: 10px;
 }
 
@@ -58,10 +55,11 @@
     flex-wrap: wrap;
     height: 35px;
     width: 100%;
+    margin-left: -50px;
 }
 .form-inputs label{
     color: var(--color-primary);
-    margin-left: 100px;
+    margin-left: 450px;
     
     font-size: 1.2em;
     font-weight: bold;
@@ -74,13 +72,26 @@
     border: 2px solid var(--color-primary);
     border-radius: 10px;
     padding-left: 10px;
+    
+}
+.form-inputs p{
+    color: #000000;
+    display: flex;
+    
+    height: 100%;
+    width: 100%;
+    padding-left: 200px;
+    margin-top: -20px;
+    
+    
+
 }
 
 #select-ts select{
     color: var(--color-primary);
     background-color: var(--color-secundary);
     margin-right: 10px;
-    height: 25px;
+    height: 20px;
     width: 200px;
     border: 2px solid var(--color-primary);
     border-radius: 15px;
@@ -91,7 +102,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 50px;
+    height: 70px;
     width: 100%;
 }
 #cont-btn-submit button{
@@ -109,5 +120,4 @@
     width: 205px;
     box-shadow: 0px 5px 5px #555;
 }
-
 

@@ -4,7 +4,7 @@ import './Styles/Pagination.css'
 
 export default function Pagination({aPokemons,cantPkmn,refresh}){
 
-const cantPage = Math.round(aPokemons.length / cantPkmn);
+const cantPage = Math.ceil(aPokemons.length / cantPkmn);
 const [page, setPage]= useState(1);
 const lastPkmn = page * cantPkmn;
 const firstPkmn = lastPkmn - cantPkmn;
