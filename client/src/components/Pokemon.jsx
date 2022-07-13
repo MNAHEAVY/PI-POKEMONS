@@ -18,29 +18,29 @@ export default function Pokemon() {
         let pokemon = useSelector(store => store.pokemon);
 
     return (
-        <div className="poke-container">
-            <div className= "poke-nav">
-                <div className="poke-navbar-up"> 
+        <div className="poke-nav">
+            <div className= "poke-navbar-up">
+                <div> 
                 
-                <h1>Pokemon</h1>
                    <Link to= '/home' >
                        <button>
                            <h1>Volver</h1>
                        </button>
                    </Link>
+                <h1>Pokemon</h1>
              </div>
             
             
            
           
             { pokemon.id?
-                <div className="pag-container">
+                <div >
                     <div>                        
                     <img src={pokemon.image} />
                     </div>
 
                     <div>
-                    <h1> {pokemon.name}</h1>
+                    <h2> {pokemon.name}</h2>
                     <h4>Tipos: {pokemon.types}</h4>
                     <h4>Número ID {pokemon.id}</h4>
                     <h4>Estadisticas:</h4>
@@ -55,7 +55,7 @@ export default function Pokemon() {
             
                 </div> 
                    : 
-                    <h1>Cargando...</h1>    
+                    <h2>Cargando...</h2>    
 
              
                
