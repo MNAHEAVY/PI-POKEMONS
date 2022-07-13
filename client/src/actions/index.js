@@ -4,7 +4,7 @@ import axios from 'axios'
 export function getAllPokemons(){
     return async function(dispatch){
 
-        const res = await axios.get('http://localhost:3001/')
+        const res = await axios.get('/')
         dispatch({
             type: 'GET_ALL_POKEMONS',
             payload: res.data
@@ -14,7 +14,7 @@ export function getAllPokemons(){
 export function getPkmnsById(id){
     return async function(dispatch){
 
-        const res = await axios.get(`http://localhost:3001/pokemons/${id}`)
+        const res = await axios.get(`/pokemons/${id}`)
         console.log(res.data)
         dispatch({
             type: 'GET_PKMNID',
@@ -26,7 +26,7 @@ export function getPkmnsById(id){
 export function getAllTypes(){
         return async function(dispatch){
     
-            const res = await axios.get('http://localhost:3001/types')
+            const res = await axios.get('/types')
             dispatch({
                 type: 'GET_ALL_TYPES',
                 payload: res.data
@@ -35,7 +35,7 @@ export function getAllTypes(){
 }
 export function getPkmnByName(name){
     return async function(dispatch){
-        const res =  await axios(`http://localhost:3001/?name=${name}`)
+        const res =  await axios(`/?name=${name}`)
         console.log(res.data)
         dispatch({
             type: "GET_PKMNS_BY_NAME",
@@ -74,6 +74,6 @@ export function orderPkmnsStr(payload){
 export function createPkmn(payload){
 
     return async function(dispatch){
-        await axios.post('http://localhost:3001/',payload)
+        await axios.post('/',payload)
         
     }}
