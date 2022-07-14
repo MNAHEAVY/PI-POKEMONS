@@ -25,7 +25,7 @@ export default function SearchBar(){
         <div className="cont-searchbar">
             <form  onSubmit={(e)=>{handleSubmit(e)}} >
                 <button type="submit"><img src={s} width= '40px'height='40px' /></button>
-                <input value={input} onChange={(e)=>{handleChange(e)}} placeholder='Que Pokemon buscas...'/>
+                <input value={input.toLowerCase} onChange={(e)=>{handleChange(e)}} placeholder='Que Pokemon buscas...'/>
             </form>
         </div>
     )

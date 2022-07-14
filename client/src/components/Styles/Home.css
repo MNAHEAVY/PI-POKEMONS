@@ -117,6 +117,121 @@ body{
   height: 30px;
 }
 
+@media screen and (max-width: 420px){
+  
+  /* ----HOME---- */
+  .home-container{
+    background-color: var(--color-primary);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+  }
+            /* ---HOME NAV */
+  .home-nav{
+    background:linear-gradient(to bottom, red, white);
+    background-position: bottom;
+    width: 100%;
+    height: 300px;
+  }
+  
+  .home-navbar-up{
+    color: var(--color-primary);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 40%;
+    width: 100%;
+  }
+  .home-navbar-up h1{
+    font-size: 2.8em;
+    
+    
+  }
+  .home-navbar-up a button{
+    background-color: var(--color-primary);
+    padding-left: 0px;
+    margin-top: 62px;
+    margin-right: 10px;
+    height: 18px;
+    width: 55px;
+    border-radius: 5px;
+    border: none;
+    transition: .3s;
+  }
+  .home-navbar-up a button:hover{
+    font-size: 0.5em;
+    height: 17px;
+    width: 27px;
+    margin: 0px;
+  }
+  .home-navbar-up a button h1{
+    font-size: 0.5em;
+  }
+  .home-navbar-d{
+    display: flex;
+    justify-content: space-evenly;
+    height: 100%;
+    width: 100%;
+  }
+  
+  .home-navbar-d a button{
+    padding: 10px;
+    margin: 10px;
+    height: 20px;
+    width: 30px;
+  }
+  .home-navbar-d a button:hover{
+    height: 0px;
+    width: 0px;
+  }
+  
+  .home-navbar-d select{
+    color:var(--color-primary);
+    background-color: var(--color-secundary);
+    font-size: 0.6em;
+    padding-left: 0px;
+    border: 2px solid var(--color-primary);
+    border-radius: 15px;
+    height: 20px;
+    width: 65px;
+  }
+  
+  .home-navbar-d button{
+    font-size: 0.3em;
+    border: none;
+    border-radius: 10px;
+    height: 35px;
+    width: 50px;
+    margin: 0px -5px;
+    margin-left: 0px;
+    transition: .3s;
+  }
+  .home-navbar-d button:hover{
+    padding-bottom: 2px;
+    font-size: 0.5em;
+    height: 50px;
+    width: 230px;
+    margin: 29px -27px;
+    margin-left: 0 px;
+  }
+  .home-navbar-d div{
+    color: var(--color-primary);
+    font-size: 0.5em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 60px;
+  }
+  .home-navbar-d div label{
+    height: 10px;
+    font-size: 1em;
+  }
+  
+  }
+
 @media screen and (max-width: 390px){
   
 /* ----HOME---- */
